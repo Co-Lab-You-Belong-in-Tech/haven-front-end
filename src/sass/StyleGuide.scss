@@ -1,0 +1,41 @@
+$fontLarge: 98px;
+$fontMedium: clamp(2rem, 1.4595rem + 2.7027vw, 4.5rem);
+$fontMedium2: 32px;
+$fontMedium3: 22px;
+$fontSmall: 16px;
+$fontForm: 26px;
+
+$fontHeadingType: Raleway, Arial, Helvetica, sans-serif;
+$fontBodyType: Raleway, Arial, Helvetica, sans-serif;
+
+@mixin centerItems {
+  justify-content: center;
+  align-items: center;
+}
+.closed {
+  display: none;
+}
+.opened {
+  display: flex;
+}
+.active {
+  color: black;
+}
+.notActive {
+  color: darkgray;
+}
+.signUpButton {
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 10px;
+}
+.acceptCondtions {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  label {
+    width: 100%;
+  }
+}

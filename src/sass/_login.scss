@@ -1,0 +1,80 @@
+@import "../sass/variables.scss";
+
+.onBoardingWrapper {
+  font-family: Raleway;
+  min-height: 100vh;
+  color: black;
+  position: relative;
+  .wrapper10 {
+    justify-content: space-evenly;
+    @include FlexColumn;
+    min-height: 100vh;
+
+    .signInContainer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 34px;
+      word-wrap: break-word;
+    }
+    input {
+      padding: 10px;
+      margin: 20px 0;
+      width: 100%;
+    }
+    .checkbox {
+      width: fit-content;
+      padding: 0px;
+      margin: 0;
+      margin-right: 15px;
+    }
+    ul {
+      flex-wrap: wrap;
+      @include FlexRowCenter;
+      justify-content: space-between;
+    }
+
+    .interestButtons {
+      padding: 15px;
+      border: none;
+      margin: 5px;
+      border-radius: 25px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .clickedTagButton {
+      background-color: #00b249;
+    }
+  }
+
+  .signUpAndLogInButton {
+    padding: 20px;
+    min-width: 150px;
+    width: 100%;
+    border: none;
+    letter-spacing: 1.25px;
+    cursor: pointer;
+    margin: 5% 0;
+    text-transform: uppercase;
+  }
+  .loginButton {
+    background-color: black;
+    color: white;
+  }
+  .signupButton {
+    background-color: #66ffa6;
+    color: black;
+  }
+}
+
+.submitButton {
+  background-color: black;
+  color: white;
+}
+.continueButton {
+  background-color: #66ffa6;
+  color: black;
+}
