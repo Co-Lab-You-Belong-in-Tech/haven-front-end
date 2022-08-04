@@ -1,7 +1,6 @@
 import { useState } from "react";
-import "../../sass/_login.scss";
 import NextInput from "../inputs/NextInput";
-import EmailAndPasswordInput from "../inputs/EmailAndPassInput.jsx";
+import EmailAndPasswordComponent from "../inputs/EmailAndPasswordComponent";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");

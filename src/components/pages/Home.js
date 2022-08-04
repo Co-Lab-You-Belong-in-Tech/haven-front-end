@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import ActivityPost from "../ActivityPost.js";
+import ActivityPost from "../activityPost/ActivityPost.js";
 
 function Home() {
   const [posts, setPosts] = useState([]);
