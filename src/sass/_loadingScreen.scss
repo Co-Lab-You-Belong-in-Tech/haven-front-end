@@ -1,0 +1,37 @@
+@import "./StyleGuide.scss";
+
+.LoadingScreenSection {
+  background-color: rgb(5, 5, 49);
+  color: white;
+  display: flex;
+  font-family: "Cormorant SC", serif;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  @include centerItems;
+
+  .LoadingScreenCircle {
+    background-color: gold;
+    border-radius: 90%;
+    display: flex;
+    height: 20vw;
+    min-height: 150px;
+    width: 20vw;
+    min-width: 150px;
+    border: white solid 4px;
+    @include centerItems;
+
+    h1 {
+      font-size: 80px;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+    }
+
+    h2 {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      bottom: 10%;
+    }
+  }
+}
