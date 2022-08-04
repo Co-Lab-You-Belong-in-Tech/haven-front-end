@@ -1,11 +1,10 @@
-import './App.scss';
+import "./App.scss";
 import "./sass/_setup.scss";
 import React, { useState, useEffect } from "react";
-import AppContents from './AppContents';
+import AuthContext from "./context/AuthContext.jsx";
 import LoadingScreen from "./LoadingScreen.jsx";
 
 function App() {
-
   const [loadingScreenInView, setLoadingScreenInView] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -16,9 +15,17 @@ function App() {
   };
 
   const setAuth = (boolean) => {
+
     setIsAuthenticated(boolean);
+
   };
 
+  const LoadingScreenLoadedReload = () => {
+    setLoadingScreenInView(true);
+    setTimeout(function () {
+      setLoadingScreenInView(false);
+    }, 4000);
+  };
   const isAuth = async () => {
     try {
       const response = await fetch(
@@ -30,7 +37,8 @@ function App() {
       );
 
       const parseRes = await response.json();
-      parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+        parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+
     } catch (error) {
       console.error(error);
     }
@@ -43,10 +51,13 @@ function App() {
   return (
     <div className="App">
       <>
-          {loadingScreenInView ? <LoadingScreen /> : <AppContents setAuth={setAuth} user={isAuthenticated} />}
-          {LoadingScreenLoaded()}
-          {/* <Home /> */}
-        </>
+        {loadingScreenInView ? (
+          <LoadingScreen />
+        ) : (
+            <AuthContext LoadingScreenLoadedReload={LoadingScreenLoadedReload} setAuth={setAuth} user={isAuthenticated} />
+        )}
+        {LoadingScreenLoaded()}
+      </>
     </div>
   );
 }

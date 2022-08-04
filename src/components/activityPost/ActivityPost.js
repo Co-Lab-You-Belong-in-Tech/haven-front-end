@@ -8,6 +8,7 @@ console.log(props)
     <section className="onBoardingWrapper">
       <div className="wrapper10">
         <h2>{props.post.title}</h2>
+        <h4>By {props.post.username}</h4>
         <p>{props.post.content}</p>
         <div>
          {DateTime.fromISO(props.post.created_at).toRelative()}

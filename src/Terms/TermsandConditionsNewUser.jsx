@@ -1,7 +1,7 @@
 import { TermsandConditionsNewUserTermsMap } from "./TermsandConditionsNewUserTermsMap";
 import "../sass/_terms.scss";
 import { useRef, useState } from "react";
-import NextInput from "../inputs/NextInput";
+import NextInput from "../components/inputs/NextInput";
 import OnBoardingProgressBar from "../onBoarding/onBoardingProgressBar";
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,6 @@ const TermsandConditionsNewUser = (props) => {
 
     if (checkboxRef.current.checked) {
       setSuccess(true);
-      props.setAuth(true);
     } else {
       setSuccess(false);
     }
@@ -80,13 +79,8 @@ const TermsandConditionsNewUser = (props) => {
             </div>
 
             {success ? (
-              <Link to="/createuser">
-                <input
-                  onClick={handleInputChange}
-                  type="submit"
-                  className="submit"
-                  value="Submit"
-                />
+              <Link className="termsSubmit" to="/createuser">
+                Submit
               </Link>
             ) : (
               <p>You Must Accept the Terms and Conditions to Continue</p>

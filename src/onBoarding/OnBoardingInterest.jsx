@@ -1,6 +1,6 @@
 import { OnBoardingInterestsMap } from "./OnBoardingInterestsMap";
 import TaglistIndivdualButton from "./TaglistIndividualButton";
-import NextInput from "../inputs/NextInput";
+import NextInput from "../components/inputs/NextInput";
 import { useState } from "react";
 import OnBoardingProgressBar from "./onBoardingProgressBar";
 
@@ -43,23 +43,23 @@ const OnBoardingInterest = (props) => {
           interests={interests}
         />
         <h2>What are you interested in?</h2>
-      
-      <div className="onBoardingContent">
-        <ul>
-          {OnBoardingInterestsMap.map((item, index) => {
-            return (
-              <TaglistIndivdualButton
-                key={index}
-                ButtonClass={"interestButtons"}
-                InterestName={item.InterestName}
-                tagArray={tagArray}
-                setTagValue={setTagValue}
-              />
-            );
-          })}
-        </ul>
+
+        <div className="onBoardingContent">
+          <ul>
+            {OnBoardingInterestsMap.map((item, index) => {
+              return (
+                <TaglistIndivdualButton
+                  key={index}
+                  ButtonClass={"interestButtons"}
+                  InterestName={item.InterestName}
+                  tagArray={tagArray}
+                  setTagValue={setTagValue}
+                />
+              );
+            })}
+          </ul>
         </div>
-        </div>
+      </div>
       <NextInput
         ButtonText={"CONTINUE"}
         ButtonClass={`skipButton`}

@@ -15,7 +15,7 @@ import Login from "../signupandlogin/Login.jsx";
 const OnBoarding = (props) => {
 
   const [tagsarray, setTagsArray] = useState([]);
-  const [avatarUrl, setAvatarUrl] = useState(""); 
+  const [avatarUrl, setAvatarUrl] = useState("./assets/profilePictures"); 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState(""); 
   const [userName, setUserName] = useState(""); 
@@ -29,9 +29,10 @@ const OnBoarding = (props) => {
   }
 
   return (
-    <section className="onBoardingWrapper">
-      <div className="wrapper10">
-        <BrowserRouter>
+    <>
+      <BrowserRouter>
+        <section className="onBoardingWrapper">
+          <div className="wrapper10">
           <Routes>
             <Route extact path="/" element={<LandingPageUserSignedOut />} />
             <Route extact path="/avatars" element={<OnBoardingAvatars setAvatarUrl={setAvatarUrl} passData={passData} />}/>
@@ -41,12 +42,13 @@ const OnBoarding = (props) => {
             <Route extact path="/flu" element={<OnBoardingProfileFLUNames setUserName={setUserName} setFirstName={setFirstName} userName={userName} firstName={firstName} lastName={lastName} setLastName={setLastName} passData={passData} />} />
             <Route extact path="/location" element={<OnBoardingCountrySelector passData={passData} setCountry={setCountry} />} />
             <Route extact path="/pronouns" element={<OnBoardingPronouns setPronouns={setPronouns} pronouns={pronouns} passData={passData} />} />
-            <Route extact path="terms" element={<TermsandConditionsNewUser passData={passData} />} />
-            <Route extact path="createuser" element={<OnBoardingCreateUser setAuth={props.setAuth} />}/>
+            <Route extact path="/terms" element={<TermsandConditionsNewUser passData={passData} />} />
+            <Route extact path="/createuser" element={<OnBoardingCreateUser LoadingScreenClicked={props.LoadingScreenClicked} setAuth={props.setAuth} />} />
           </Routes>
+          </div>
+        </section>
         </BrowserRouter>
-      </div>
-    </section>
+      </>
   );
 };
 export default OnBoarding;

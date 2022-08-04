@@ -7,7 +7,6 @@
   .wrapper10 {
     @include FlexColumn;
     min-height: inherit;
-    justify-content: space-between;
 
     .signUpAndLoginContainer {
       @include FlexColumn;
@@ -34,7 +33,9 @@
         }
       }
     }
-
+    .onBoardingContentContainer {
+      justify-content: space-between;
+    }
     h2 {
       font-family: Raleway;
       font-size: 30px;
@@ -42,7 +43,6 @@
 
     .buttonContainer {
       width: 100%;
-      margin-bottom: 10%;
     }
 
     .backButtonContainer {
@@ -66,8 +66,11 @@
         }
 
         input {
-          padding: 10px;
+          padding: 15px;
+          border-radius: 15px;
           width: 100%;
+          background-color: lightgray;
+          border: none;
         }
       }
     }

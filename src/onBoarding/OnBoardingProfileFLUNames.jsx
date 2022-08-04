@@ -1,6 +1,5 @@
-import EmailAndPasswordInput from "../inputs/EmailAndPassInput";
-import { useState } from "react";
-import NextInput from "../inputs/NextInput";
+import EmailAndPasswordInput from "../components/inputs/EmailAndPassInput";
+import NextInput from "../components/inputs/NextInput";
 import OnBoardingProgressBar from "./onBoardingProgressBar";
 
 const OnBoardingProfileFLUNames = (props) => {
@@ -26,6 +25,8 @@ const OnBoardingProfileFLUNames = (props) => {
           terms={terms}
           pronouns={pronouns}
           flu={flu}
+          countrylist={countrylist}
+          statusText={statusText}
           interests={interests}
         />
         <h2>Profile Settings - FLU</h2>

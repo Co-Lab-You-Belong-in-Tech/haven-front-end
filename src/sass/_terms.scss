@@ -35,10 +35,24 @@
       }
       .submit {
         width: 200px;
+        background-color: gold;
       }
       .checkbox {
         margin-right: 15px;
       }
     }
+  }
+}
+.termsSubmit {
+  width: 100%;
+  outline: solid red 5px;
+  cursor: pointer;
+  height: 40px;
+  input {
+    background-color: black;
+    color: white;
+    height: 100%;
+    width: 100%;
+    border: none;
   }
 }

@@ -1,38 +1,61 @@
 import React from "react";
+import axios from "axios";
 import { useState, useEffect } from "react";
-import ActivityPost from "../activityPost/ActivityPost.js";
 
 function Home() {
-  const [posts, setPosts] = useState([]);
+  const [productItem, setProductItem] = useState([]);
+  const [errorAPI, setErrorAPI] = useState("");
 
-  const fetchPosts = async () => {
-    try {
-      const response = await fetch(
-        "https://haven-nodejs.herokuapp.com/activities",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            token: localStorage.token,
-          },
-        }
-      );
-      const parseRes = await response.json();
-      setPosts(parseRes);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // UseEffect Call Once for a Random Quote in Banner//
   useEffect(() => {
-    fetchPosts();
+    axios({
+      method: "GET",
+      url: ` https://haven-nodejs.herokuapp.com/activities`,
+      responseType: "json",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.token,
+      },
+    })
+      .then((jsonResponse) => {
+        setProductItem(jsonResponse.data);
+      })
+      .catch((err) => {
+        //Api error handling.
+        if (err.message === "Not Found") {
+          setErrorAPI("Something went wrong.");
+        } else {
+          setErrorAPI("Please try again.");
+        }
+      });
   }, []);
 
-  const activities = posts.map((post) => {
-    return <ActivityPost post={post} key={post.id} />;
-  });
-
-  console.log(activities);
-  return <div>{activities}</div>;
+  const renderActviityPosts = () => {
+    // API Return Success //
+    if (productItem !== []) {
+      return (
+        <section className="homeSection">
+          <div className="wrapper10">
+            <ul className="activityList">
+              {productItem.map((post, index) => (
+                <div className="activityItem" key={index}>
+                  <h3>{post.title}</h3>
+                  <li className="activityItem">
+                    <p>{post.content}</p>
+                    <p>{post.budget}</p>
+                  </li>
+                </div>
+              ))}
+            </ul>
+          </div>
+        </section>
+      );
+    } else {
+      //Return Error on API Failed//
+      return <p>{errorAPI}</p>;
+    }
+  };
+  return <>{renderActviityPosts()}</>;
 }
 
 export default Home;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NextInput from "../inputs/NextInput";
+import NextInput from "../components/inputs/NextInput";
 import Signup from "./Signup";
 
 const SignupAndLogInPage = (props) => {

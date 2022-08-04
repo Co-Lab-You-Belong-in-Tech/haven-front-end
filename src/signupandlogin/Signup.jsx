@@ -1,6 +1,6 @@
 import { useState } from "react";
-import NextInput from "../inputs/NextInput";
-import EmailAndPasswordComponent from "../inputs/EmailAndPasswordComponent";
+import NextInput from "../components/inputs/NextInput";
+import EmailAndPasswordComponent from "../components/inputs/EmailAndPasswordComponent";
 
 export default function Signup(props) {
   const [email, setEmail] = useState("");

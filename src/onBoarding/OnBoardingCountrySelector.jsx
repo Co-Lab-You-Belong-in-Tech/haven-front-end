@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import React, { useState, useMemo } from "react";
 import Select from "react-select";
-import NextInput from "../inputs/NextInput";
+import NextInput from "../components/inputs/NextInput";
 import countryList from "react-select-country-list";
 import OnBoardingProgressBar from "./onBoardingProgressBar";
 

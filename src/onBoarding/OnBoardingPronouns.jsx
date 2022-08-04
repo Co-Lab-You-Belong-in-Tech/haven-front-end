@@ -1,5 +1,5 @@
-import EmailAndPasswordInput from "../inputs/EmailAndPassInput";
-import NextInput from "../inputs/NextInput";
+import EmailAndPasswordInput from "../components/inputs/EmailAndPassInput";
+import NextInput from "../components/inputs/NextInput";
 import OnBoardingProgressBar from "./onBoardingProgressBar";
 
 const OnBoardingPronouns = (props) => {

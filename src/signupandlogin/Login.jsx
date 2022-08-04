@@ -1,14 +1,12 @@
 import { useState } from "react";
-import NextInput from "../inputs/NextInput";
-import EmailAndPasswordComponent from "../inputs/EmailAndPasswordComponent";
+import NextInput from "../components/inputs/NextInput";
+import EmailAndPasswordComponent from "../components/inputs/EmailAndPasswordComponent";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const EmailText = "Email";
-  const PassText = "Password";
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
@@ -57,7 +55,7 @@ export default function Login(props) {
             Linked={"/interests"}
           />
         ) : (
-          <button className="submitButton signUpAndLogInButton">Submit</button>
+          <button className="submitButton signUpAndLogInButton">Log In</button>
         )}
       </form>
     </>

@@ -1,4 +1,4 @@
-import NextInput from "../inputs/NextInput";
+import NextInput from "../components/inputs/NextInput";
 import "../sass/_login.scss";
 
 const LandingPageUserSignedOut = () => {
