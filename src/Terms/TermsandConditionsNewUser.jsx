@@ -20,15 +20,6 @@ const TermsandConditionsNewUser = (props) => {
       true;
 
   // Form Input setState
-  const handleInputChange = (event) => {
-    event.preventDefault();
-
-    if (checkboxRef.current.checked) {
-      setSuccess(true);
-    } else {
-      setSuccess(false);
-    }
-  };
   const handleInputCheckSelect = () => {
     setSuccess(true);
   };
